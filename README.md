@@ -36,6 +36,9 @@ static const char smr_filename[]="/dev/sdb1";
 4. We have modified the Makefile to make the compilation of GearDB same with LevelDB. 
 
 ```
+在Makefile中添加libzbc的路径
+LDFLAGS += $(PLATFORM_LDFLAGS) -L/usr/lib   # 添加库路径
+LIBS += $(PLATFORM_LIBS) -lzbc    
 > make -j4
 ```
 5. Now you may run and test GearDB with out-static/db_bench. The "out-static/libleveldb.a." is still available in GearDB.
